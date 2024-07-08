@@ -1,0 +1,88 @@
+# Fichiers et dossiers générés par VSCode
+.vscode/
+*.code-workspace
+
+# Dossiers de compilation
+build/
+bin/
+
+# Logs et fichiers temporaires
+*.log
+*.tmp
+
+# Fichiers de sauvegarde
+*.bak
+*.swp
+*~
+
+# Fichiers de configuration spécifique à l'utilisateur
+*.user
+*.suo
+
+# Fichiers spécifiques à ShaderToy
+*.shader
+
+# Fichiers de projet IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Dépendances du projet
+node_modules/
+bower_components/
+
+# Bibliothèques et paquets
+*.jar
+*.war
+*.nar
+*.ear
+*.dll
+*.exe
+*.o
+*.so
+*.lib
+*.dylib
+*.a
+*.pdb
+
+# Autres fichiers générés
+.DS_Store
+Thumbs.db
+*.class
+
+# Fichiers de configuration des systèmes de construction
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.pbi
+
+# Fichiers spécifiques à votre environnement personnel
+.env
+.env.local
+.env.*.local
+
+# Caches et fichiers temporaires de l'éditeur
+.cache/
+dist/
+tmp/
+
+# JetBrains Rider
+.idea/
+*.sln
+*.csproj
+
+# HLSL shaders (si utilisés)
+*.hlsl
+
+# Textures et autres ressources
+*.png
+*.jpg
+*.jpeg
+*.bmp
+*.tga
+*.gif
+*.svg
+*.obj
+*.mtl
