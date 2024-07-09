@@ -75,14 +75,3 @@ tmp/
 
 # HLSL shaders (si utilisés)
 *.hlsl
-
-# Textures et autres ressources
-*.png
-*.jpg
-*.jpeg
-*.bmp
-*.tga
-*.gif
-*.svg
-*.obj
-*.mtl
