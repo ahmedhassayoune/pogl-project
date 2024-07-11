@@ -3,10 +3,15 @@
 
 #define id(val) vec4(val, val, val, 1.0)
 
-const int KERNEL_SIZE = 27;
+const float PI = 3.14159265358979;
 
-const float INNER_RADIUS = 7.0;
+const float INNER_RADIUS = 5.0;
 const float OUTER_RADIUS = 3.0 * INNER_RADIUS;
+
+const int KERNEL_SIZE = int(OUTER_RADIUS);
+
+const float INNER_AREA = PI * INNER_RADIUS * INNER_RADIUS;
+const float ANNULUS_AREA = PI * (OUTER_RADIUS * OUTER_RADIUS - INNER_RADIUS * INNER_RADIUS);
 
 const float B1 = 0.278;
 const float B2 = 0.365;
@@ -43,7 +48,7 @@ float S(float m, float n) {
 }
 
 vec2 integrate(vec2 uv) {
-    float inner_sum = 0.0, annulus_sum = 0.0, inner_w_sum = 0.0, annulus_w_sum = 0.0;
+    float inner_sum = 0.0, annulus_sum = 0.0;
     for (int i = -KERNEL_SIZE; i <= KERNEL_SIZE; i++) {
         for (int j = -KERNEL_SIZE; j <= KERNEL_SIZE; j++) {
 
@@ -58,18 +63,16 @@ vec2 integrate(vec2 uv) {
             if (d <= (INNER_RADIUS + 0.5)) {
                 float w = smooth_edge(d, INNER_RADIUS);
                 inner_sum += val * w;
-                inner_w_sum += w;
             }
 
             if (d >= (INNER_RADIUS - 0.5) && d <= (OUTER_RADIUS + 0.5)) {
                 float w = smooth_edge(d, OUTER_RADIUS);
                 annulus_sum += val * w;
-                annulus_w_sum += w;
             }
         }
     }
 
-    return vec2(inner_sum / inner_w_sum, annulus_sum / annulus_w_sum);
+    return vec2(inner_sum / INNER_AREA, annulus_sum / ANNULUS_AREA);
 }
 
 void main(void) {
