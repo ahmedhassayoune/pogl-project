@@ -22,6 +22,8 @@ const float D2 = 0.445;
 const float ALPHA_N = 0.028;
 const float ALPHA_M = 0.147;
 
+const float dt = 0.3;
+
 float sigma(float x, float a, float alpha) {
     return 1.0 / (1.0 + exp(-4.0 * (x - a) / alpha));
 }
@@ -52,7 +54,7 @@ vec2 integrate(vec2 uv) {
     for (int i = -KERNEL_SIZE; i <= KERNEL_SIZE; i++) {
         for (int j = -KERNEL_SIZE; j <= KERNEL_SIZE; j++) {
 
-            float d = sqrt(float(i*i + j*j));
+            float d = length(vec2(i, j));
             if (d > (OUTER_RADIUS + 0.5)) {
                 continue;
             }
@@ -82,10 +84,23 @@ void main(void) {
     if (iFrame == 0) {
         float val = texture(iChannel2, uv).r;
         gl_FragColor = id(val);
-    }
-    else {
-        vec2 mn = integrate(uv);
-        gl_FragColor = vec4(S(mn.x, mn.y), mn.x, mn.y, 1.0);
+        return;
     }
 
+    vec3 color;
+    color = texture(iChannel0, uv).rgb;
+    vec2 mn = integrate(uv);
+    float s = S(mn.x, mn.y);
+    color.r = color.r + dt * (2.0 * s - 1.0);
+    color.gb = mn;
+    color = clamp(color, 0.0, 1.0);
+
+    if(iMouse.z > 0.0) {
+        float d = length(gl_FragCoord.xy - iMouse.xy);
+        if(d <= OUTER_RADIUS) {
+            color.x = sigma(d, INNER_RADIUS, 0.5);
+        }
+    }
+
+    gl_FragColor = vec4(color.rgb, 1.0);
 }
