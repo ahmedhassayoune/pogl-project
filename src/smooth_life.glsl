@@ -1,9 +1,9 @@
 #iChannel0 "self"
-#iChannel2 "file://../assets/noise.png"
+#iChannel2 "file://../assets/pebbles.png"
 
 #define id(val) vec4(val, val, val, 1.0)
 
-const int KERNEL_SIZE = 23;
+const int KERNEL_SIZE = 27;
 
 const float INNER_RADIUS = 7.0;
 const float OUTER_RADIUS = 3.0 * INNER_RADIUS;
@@ -16,10 +16,6 @@ const float D2 = 0.445;
 
 const float ALPHA_N = 0.028;
 const float ALPHA_M = 0.147;
-
-float dist(vec2 p0, vec2 p1) {
-    return sqrt(pow(p0.x - p1.x, 2.0) + pow(p0.y - p1.y, 2.0));
-}
 
 float sigma(float x, float a, float alpha) {
     return 1.0 / (1.0 + exp(-4.0 * (x - a) / alpha));
