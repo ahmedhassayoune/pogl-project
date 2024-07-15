@@ -4,7 +4,7 @@ const float PI = 3.14159265358979;
 
 const float INNER_RADIUS = 4.0;
 const float OUTER_RADIUS = 3.0 * INNER_RADIUS;
-const int KERNEL_SIZE = 50;
+const int KERNEL_SIZE = int(OUTER_RADIUS);
 
 const float B1 = 0.255;
 const float B2 = 0.335;
