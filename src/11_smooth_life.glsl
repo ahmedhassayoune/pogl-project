@@ -10,9 +10,6 @@ const float OUTER_RADIUS = 3.0 * INNER_RADIUS;
 
 const int KERNEL_SIZE = int(OUTER_RADIUS);
 
-const float INNER_AREA = PI * INNER_RADIUS * INNER_RADIUS;
-const float ANNULUS_AREA = PI * (OUTER_RADIUS * OUTER_RADIUS - INNER_RADIUS * INNER_RADIUS);
-
 const float B1 = 0.257;
 const float B2 = 0.335;
 
@@ -22,7 +19,7 @@ const float D2 = 0.549;
 const float ALPHA_N = 0.028;
 const float ALPHA_M = 0.147;
 
-const float dt = 0.4;
+const float dt = 0.3;
 
 float sigmoid(float x, float a, float alpha) {
     return 1.0 / (1.0 + exp(-4.0 * (x - a) / alpha));
@@ -47,7 +44,7 @@ float S(float n, float m) {
 }
 
 vec2 integrate(vec2 uv) {
-    float inner_sum = 0.0, annulus_sum = 0.0;
+    float inner_sum = 0.0, annulus_sum = 0.0, inner_w_sum = 0.0, annulus_w_sum = 0.0;
     for (int i = -KERNEL_SIZE; i <= KERNEL_SIZE; i++) {
         for (int j = -KERNEL_SIZE; j <= KERNEL_SIZE; j++) {
 
@@ -62,23 +59,25 @@ vec2 integrate(vec2 uv) {
             if (d <= (INNER_RADIUS + 0.5)) {
                 float w = smooth_edge(d, INNER_RADIUS);
                 inner_sum += val * w;
+                inner_w_sum += w;
             }
 
             if (d >= (INNER_RADIUS - 0.5) && d <= (OUTER_RADIUS + 0.5)) {
                 float w = smooth_edge(d, OUTER_RADIUS);
                 annulus_sum += val * w;
+                annulus_w_sum += w;
             }
         }
     }
 
-    return vec2(inner_sum / INNER_AREA, annulus_sum / ANNULUS_AREA);
+    return vec2(inner_sum / inner_w_sum, annulus_sum / annulus_w_sum);
 }
 
 void main(void) {
     vec2 size = iResolution.xy;
     vec2 uv = gl_FragCoord.xy / size;
 
-    if (iFrame == 0) {
+    if (iFrame < 5) {
         float val = texture(iChannel2, uv).r;
         gl_FragColor = id(val);
         return;
@@ -87,19 +86,18 @@ void main(void) {
     vec2 mn = integrate(uv);
     float s = S(mn.y, mn.x);
 
-    vec3 color = texture(iChannel0, uv).rgb;
-    color.r = color.r + dt * (2.0 * s - 1.0);
-    color.g = mn.y;
-    color.b = mn.x;
+    float old_val = texture(iChannel0, uv).r;
+    float new_val = old_val + dt * (2.0 * s - 1.0);
+    vec4 color = id(new_val);
     color = clamp(color, 0.0, 1.0);
 
     if(iMouse.z > 0.0) {
         float d = length(gl_FragCoord.xy - iMouse.xy);
         if(d <= OUTER_RADIUS) {
             float val = sigmoid(d, INNER_RADIUS, 0.5);
-            color = id(val).rgb;
+            color = id(val);
         }
     }
 
-    gl_FragColor = vec4(color.rgb, 1.0);
+    gl_FragColor = color;
 }

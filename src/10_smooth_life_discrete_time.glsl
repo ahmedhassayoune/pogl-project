@@ -10,9 +10,6 @@ const float OUTER_RADIUS = 3.0 * INNER_RADIUS;
 
 const int KERNEL_SIZE = int(OUTER_RADIUS);
 
-const float INNER_AREA = PI * INNER_RADIUS * INNER_RADIUS;
-const float ANNULUS_AREA = PI * (OUTER_RADIUS * OUTER_RADIUS - INNER_RADIUS * INNER_RADIUS);
-
 const float B1 = 0.257;
 const float B2 = 0.335;
 
@@ -21,8 +18,6 @@ const float D2 = 0.549;
 
 const float ALPHA_N = 0.028;
 const float ALPHA_M = 0.147;
-
-const float dt = 0.4;
 
 float sigmoid(float x, float a, float alpha) {
     return 1.0 / (1.0 + exp(-4.0 * (x - a) / alpha));
@@ -80,7 +75,7 @@ void main(void) {
     vec2 size = iResolution.xy;
     vec2 uv = gl_FragCoord.xy / size;
 
-    if (iFrame == 0) {
+    if (iFrame < 5) {
         float val = texture(iChannel2, uv).r;
         gl_FragColor = id(val);
         return;
@@ -90,8 +85,7 @@ void main(void) {
     float s = S(mn.y, mn.x);
 
     vec3 color = texture(iChannel0, uv).rgb;
-    color.r = color.r + dt * (2.0 * s - 1.0);
-    color = id(color.r).rgb;
+    color = id(s).rgb;
     color = clamp(color, 0.0, 1.0);
 
     if(iMouse.z > 0.0) {

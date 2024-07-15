@@ -10,9 +10,6 @@ const float OUTER_RADIUS = 3.0 * INNER_RADIUS;
 
 const int KERNEL_SIZE = int(OUTER_RADIUS);
 
-const float INNER_AREA = PI * INNER_RADIUS * INNER_RADIUS;
-const float ANNULUS_AREA = PI * (OUTER_RADIUS * OUTER_RADIUS - INNER_RADIUS * INNER_RADIUS);
-
 const float B1 = 0.257;
 const float B2 = 0.335;
 
@@ -47,7 +44,7 @@ float S(float n, float m) {
 }
 
 vec2 integrate(vec2 uv) {
-    float inner_sum = 0.0, annulus_sum = 0.0;
+    float inner_sum = 0.0, annulus_sum = 0.0, inner_w_sum = 0.0, annulus_w_sum = 0.0;
     for (int i = -KERNEL_SIZE; i <= KERNEL_SIZE; i++) {
         for (int j = -KERNEL_SIZE; j <= KERNEL_SIZE; j++) {
 
@@ -62,23 +59,25 @@ vec2 integrate(vec2 uv) {
             if (d <= (INNER_RADIUS + 0.5)) {
                 float w = smooth_edge(d, INNER_RADIUS);
                 inner_sum += val * w;
+                inner_w_sum += w;
             }
 
             if (d >= (INNER_RADIUS - 0.5) && d <= (OUTER_RADIUS + 0.5)) {
                 float w = smooth_edge(d, OUTER_RADIUS);
                 annulus_sum += val * w;
+                annulus_w_sum += w;
             }
         }
     }
 
-    return vec2(inner_sum / INNER_AREA, annulus_sum / ANNULUS_AREA);
+    return vec2(inner_sum / inner_w_sum, annulus_sum / annulus_w_sum);
 }
 
 void main(void) {
     vec2 size = iResolution.xy;
     vec2 uv = gl_FragCoord.xy / size;
 
-    if (iFrame == 0) {
+    if (iFrame < 5) {
         float val = texture(iChannel2, uv).r;
         gl_FragColor = id(val);
         return;

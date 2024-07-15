@@ -1,7 +1,7 @@
-#include "smooth_life_gaussian_opti_utils.glsl"
+#include "16_smooth_life_gaussian++_utils.glsl"
 
 #iChannel0 "self"
-#iChannel1 "file://smooth_life_gaussian_opti_3.glsl"
+#iChannel1 "file://16_smooth_life_gaussian++_3.glsl"
 #iChannel2 "file://../assets/pebbles.png"
 
 float sigmoid(float x, float a, float alpha) {
