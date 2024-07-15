@@ -14,7 +14,7 @@ vec2 integrate_x(vec2 uv) {
     inner_w_sum += coef_inner;
 
     // Apply x-pass symmetrically
-    for (int i = 1; i <= KERNEL_SIZE; i++) {
+    for (int i = 1; i <= KERNEL_RADIUS; i++) {
         vec2 pos = vec2(i, 0.0);
         float d = length(pos);
         if (d > (OUTER_RADIUS + 0.5)) {

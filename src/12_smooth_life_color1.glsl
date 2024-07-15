@@ -8,7 +8,7 @@ const float PI = 3.14159265358979;
 const float INNER_RADIUS = 5.0;
 const float OUTER_RADIUS = 3.0 * INNER_RADIUS;
 
-const int KERNEL_SIZE = int(OUTER_RADIUS);
+const int KERNEL_RADIUS = int(OUTER_RADIUS);
 
 const float B1 = 0.257;
 const float B2 = 0.335;
@@ -45,8 +45,8 @@ float S(float n, float m) {
 
 vec2 integrate(vec2 uv) {
     float inner_sum = 0.0, annulus_sum = 0.0, inner_w_sum = 0.0, annulus_w_sum = 0.0;
-    for (int i = -KERNEL_SIZE; i <= KERNEL_SIZE; i++) {
-        for (int j = -KERNEL_SIZE; j <= KERNEL_SIZE; j++) {
+    for (int i = -KERNEL_RADIUS; i <= KERNEL_RADIUS; i++) {
+        for (int j = -KERNEL_RADIUS; j <= KERNEL_RADIUS; j++) {
 
             float d = length(vec2(i, j));
             if (d > (OUTER_RADIUS + 0.5)) {
