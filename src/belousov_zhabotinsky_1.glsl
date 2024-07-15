@@ -21,9 +21,9 @@ vec4 apply_gradient(float val, Gradient gradient) {
     return gradient.colors[4];
 }
 
-void mainImage( out vec4 fragColor, in vec2 fragCoord )
+void main(void)
 {
-    float cell_state = texture(iChannel0, fragCoord/(iResolution.xy * scale)).r;
+    float cell_state = texture(iChannel0, gl_FragCoord.xy/(iResolution.xy * scale)).r;
     float val = cell_state / q;
     
     // Define gradient
@@ -40,5 +40,5 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     gradient.positions[3] = 0.75;
     gradient.positions[4] = 1.0;
     
-    fragColor = apply_gradient(val, gradient);
+    gl_FragColor = apply_gradient(val, gradient);
 }
