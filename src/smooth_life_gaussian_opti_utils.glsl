@@ -6,11 +6,11 @@ const float INNER_RADIUS = 4.0;
 const float OUTER_RADIUS = 3.0 * INNER_RADIUS;
 const int KERNEL_SIZE = 50;
 
-const float B1 = 0.257;
+const float B1 = 0.255;
 const float B2 = 0.335;
 
 const float D1 = 0.358;
-const float D2 = 0.552;
+const float D2 = 0.540;
 
 const float ALPHA_N = 0.028;
 const float ALPHA_M = 0.147;
