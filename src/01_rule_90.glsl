@@ -6,6 +6,30 @@
 
 int gen_nb_frames = 1;
 
+bool isRandom = false; //true;
+float density = 0.1;
+
+// Random function generator from https://www.shadertoy.com/view/Nsf3Ws
+//////////////////////////////////////////////////////////////////////
+uint seed = 0u;
+void hash(){
+    seed ^= 2747636419u;
+    seed *= 2654435769u;
+    seed ^= seed >> 16;
+    seed *= 2654435769u;
+    seed ^= seed >> 16;
+    seed *= 2654435769u;
+}
+void initRandomGenerator(){
+    seed = uint(gl_FragCoord.y*iResolution.x + gl_FragCoord.x)+uint(iFrame)*uint(iResolution.x)*uint(iResolution.y);
+}
+
+float random(){
+    hash();
+    return float(seed)/4294967295.0;
+}
+/////////////////////////////////////////////////////////////////////
+
 float sample_tex(vec2 uv, float i, float j)
 {
     vec2 delta_ij = vec2(i,j) / iResolution.xy;
@@ -19,6 +43,8 @@ float sample_tex(vec2 uv, float i, float j)
 
 void main(void)
 {
+    initRandomGenerator();
+    
     vec2 size = iResolution.xy;
     vec2 uv = gl_FragCoord.xy / size;
     
@@ -28,13 +54,25 @@ void main(void)
     int frame = iFrame / gen_nb_frames;
     if (frame < 1)
     {
-        if (y == 0 && x == 400)
+        gl_FragColor = dead;
+        if (y == 0)
         {
-            gl_FragColor = alive;
-        }
-        else
-        {
-            gl_FragColor = dead;
+            if (isRandom)
+            {
+                float rand = random();
+                if (rand < density)
+                {
+                    gl_FragColor = alive;
+                }
+            }
+            else
+            {
+                if (x == 400)
+                {
+                    gl_FragColor = alive;
+                }
+            }
+                
         }
     }
     else
