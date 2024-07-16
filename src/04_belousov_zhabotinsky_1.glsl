@@ -1,6 +1,6 @@
-#include "belousov_zhabotinsky_utils.glsl"
+#include "04_belousov_zhabotinsky_utils.glsl"
 
-#iChannel0 "file://belousov_zhabotinsky_2.glsl"
+#iChannel0 "file://04_belousov_zhabotinsky_2.glsl"
 
 struct Gradient {
     vec4 colors[5];

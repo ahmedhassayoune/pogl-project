@@ -1,4 +1,4 @@
-#include "belousov_zhabotinsky_utils.glsl"
+#include "04_belousov_zhabotinsky_utils.glsl"
 
 #iChannel0 "self"
 #iChannel2 "file://../assets/noise-small.png"

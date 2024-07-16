@@ -1,6 +1,6 @@
-#include "viral_replication_utils.glsl"
+#include "05_viral_replication_utils.glsl"
 
-#iChannel0 "file://viral_replication_2.glsl"
+#iChannel0 "file://05_viral_replication_2.glsl"
 
 void main(void)
 {
