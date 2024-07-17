@@ -1,7 +1,7 @@
-#include "14_smooth_life++_utils.glsl"
+#include "smooth_life++_utils.glsl"
 
 #iChannel0 "self"
-#iChannel1 "file://14_smooth_life++_3.glsl"
+#iChannel1 "file://smooth_life++_3.glsl"
 #iChannel2 "file://../assets/pebbles.png"
 
 float sigmoid_ab(float x, float a, float b) {

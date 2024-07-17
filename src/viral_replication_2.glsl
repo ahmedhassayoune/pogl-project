@@ -1,4 +1,4 @@
-#include "05_viral_replication_utils.glsl"
+#include "viral_replication_utils.glsl"
 
 #iChannel0 "self"
 #iChannel2 "file://../assets/noise.png"

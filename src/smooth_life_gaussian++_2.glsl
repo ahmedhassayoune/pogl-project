@@ -1,6 +1,6 @@
-#include "16_smooth_life_gaussian++_utils.glsl"
+#include "smooth_life_gaussian++_utils.glsl"
 
-#iChannel0 "file://16_smooth_life_gaussian++_1.glsl"
+#iChannel0 "file://smooth_life_gaussian++_1.glsl"
 
 vec2 integrate_x(vec2 uv) {
     float coef_inner = 1.0 / (sqrt(2.0 * PI) * INNER_RADIUS);

@@ -1,18 +1,18 @@
-#include "14_smooth_life++_utils.glsl"
+#include "smooth_life++_utils.glsl"
 
-#iChannel0 "file://14_smooth_life++_2.glsl"
+#iChannel0 "file://smooth_life++_1.glsl"
 
-vec2 integrate_y(vec2 uv) {
+vec2 integrate_x(vec2 uv) {
     float inner_sum = 0.0, annulus_sum = 0.0, inner_w_sum = 0.0, annulus_w_sum = 0.0;
 
     // Compute center pixel
-    float val = texture(iChannel0, uv).x;
+    float val = texture(iChannel0, uv).r;
     inner_sum += val;
     inner_w_sum += 1.0;
 
-    // Apply y-pass symmetrically
-    for (int j = 1; j <= KERNEL_RADIUS; j++) {
-        vec2 pos = vec2(0.0, j);
+    // Apply x-pass symmetrically
+    for (int i = 1; i <= KERNEL_RADIUS; i++) {
+        vec2 pos = vec2(i, 0.0);
         float d = length(pos);
         if (d > (OUTER_RADIUS + 0.5)) {
             continue;
@@ -44,7 +44,7 @@ void main() {
     vec2 size = iResolution.xy;
     vec2 uv = gl_FragCoord.xy / size;
 
-    vec2 y_pass = integrate_y(uv);
+    vec2 x_pass = integrate_x(uv);
 
-    gl_FragColor = vec4(y_pass, 0.0, 1.0);
+    gl_FragColor = vec4(x_pass, 0.0, 1.0);
 }
