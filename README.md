@@ -7,7 +7,7 @@ It is a Shadertoy implementation of [cellular automatons](https://en.wikipedia.o
 
 To run the shaders, you can install the vscode extension [Shader Toy](https://marketplace.visualstudio.com/items?itemName=stevensona.shader-toy) by *Adam Stevenson*. You can then open the different shaders in the `src` folder and run them `Ctrl+Shift+P` -> `Shader Toy: Show GLSL Preview`.
 
-A link will be added for some shaders to run them directly in the [Shader Toy website](https://www.shadertoy.com/).
+These shaders are also available online on [Shadertoy](https://www.shadertoy.com). You can find the links to the online shaders in the list below.
 
 ### Note
 The shaders with multiple files `*_1, *_2, *_3` represent the same shader and need to be launched from the first shader `*_1`.
