@@ -23,16 +23,13 @@ With these shaders, you can play with the `gen_nb_frames` parameter to slow down
 
 <div style="text-align: center; margin-top: 20px">
   <figure style="display: inline-block; margin-right: 10px;">
-    <img src="gifs/rule_90.gif" style="width: 280px; height: 280px;">
-    <figcaption><i>Rule 90</i> - A 1D cellular automaton</figcaption>
+    <img src="gifs/rule_90.gif" style="width: 280px; height: 280px;" alt="Rule 90">
   </figure>
   <figure style="display: inline-block; margin-right: 10px;">
-    <img src="gifs/rule_110.gif" style="width: 280px; height: 280px;">
-    <figcaption><i>Rule 110</i> - A 1D cellular automaton</figcaption>
+    <img src="gifs/rule_110.gif" style="width: 280px; height: 280px;" alt="Rule 110">
   </figure>
   <figure style="display: inline-block;">
-    <img src="gifs/rule_184.gif" style="width: 280px; height: 280px;">
-    <figcaption><i>Rule 184</i> - A 1D cellular automaton</figcaption>
+    <img src="gifs/rule_184.gif" style="width: 280px; height: 280px;" alt="Rule 184">
   </figure>
 </div>
 
@@ -45,16 +42,13 @@ With these shaders, you can play with the `gen_nb_frames` parameter to slow down
 
 <div style="text-align: center; margin-top: 20px">
   <figure style="display: inline-block; margin-right: 10px;">
-    <img src="gifs/belousov_zhabotinsky.gif" style="width: 280px; height: 280px;">
-    <figcaption><i>Belooussov-Jabotinski reaction</i></figcaption>
+    <img src="gifs/belousov_zhabotinsky.gif" style="width: 280px; height: 280px;" alt="Belooussov-Jabotinski reaction">
   </figure>
   <figure style="display: inline-block; margin-right: 10px;">
-    <img src="gifs/viral_replication.gif" style="width: 280px; height: 280px;">
-    <figcaption><i>Viral Replication</i></figcaption>
+    <img src="gifs/viral_replication.gif" style="width: 280px; height: 280px;" alt="Viral Replication">
   </figure>
   <figure style="display: inline-block;">
-    <img src="gifs/gol.gif" style="width: 280px; height: 280px;">
-    <figcaption><i>Game of life</i></figcaption>
+    <img src="gifs/gol.gif" style="width: 280px; height: 280px;" alt="Game of life">
   </figure>
 </div>
 
@@ -65,16 +59,13 @@ With these shaders, you can play with the `gen_nb_frames` parameter to slow down
 
 <div style="text-align: center; margin-top: 20px">
   <figure style="display: inline-block; margin-right: 10px;">
-    <img src="gifs/smooth_life_discrete.gif" style="width: 280px; height: 280px;">
-    <figcaption><i>Smooth Life discrete time-stepping</i></figcaption>
+    <img src="gifs/smooth_life_discrete.gif" style="width: 280px; height: 280px;" alt="Smooth Life discrete time-stepping">
   </figure>
   <figure style="display: inline-block; margin-right: 10px;">
-    <img src="gifs/smooth_life.gif" style="width: 280px; height: 280px;">
-    <figcaption><i>Smooth Life continuous time-stepping</i></figcaption>
+    <img src="gifs/smooth_life.gif" style="width: 280px; height: 280px;" alt="Smooth Life continuous time-stepping">
   </figure>
   <figure style="display: inline-block;">
-    <img src="gifs/gaussian_smooth_life.gif" style="width: 280px; height: 280px;">
-    <figcaption><i>Gaussian Smooth Life</i></figcaption>
+    <img src="gifs/gaussian_smooth_life.gif" style="width: 280px; height: 280px;" alt="Gaussian Smooth Life">
   </figure>
 </div>
 
@@ -83,12 +74,10 @@ With these shaders, you can play with the `gen_nb_frames` parameter to slow down
 
 <div style="text-align: center; margin: 20px 0;">
   <figure style="display: inline-block; margin-right: 10px;">
-    <img src="gifs/smooth_life_color1.gif" style="width: 280px; height: 280px;">
-    <figcaption><i>Smooth Life color 1</i></figcaption>
+    <img src="gifs/smooth_life_color1.gif" style="width: 280px; height: 280px;" alt="Smooth Life color 1">
   </figure>
   <figure style="display: inline-block;">
-    <img src="gifs/smooth_life_color2.gif" style="width: 280px; height: 280px;">
-    <figcaption><i>Smooth Life color 2</i></figcaption>
+    <img src="gifs/smooth_life_color2.gif" style="width: 280px; height: 280px;" alt="Smooth Life color 2">
   </figure>
 </div>
 
@@ -97,12 +86,10 @@ With these shaders, you can play with the `gen_nb_frames` parameter to slow down
 
 <div style="text-align: center; margin: 20px 0;">
   <figure style="display: inline-block; margin-right: 10px;">
-    <img src="gifs/smooth_life_opti.gif" style="width: 280px; height: 280px;">
-    <figcaption><i>Smooth Life optimized</i></figcaption>
+    <img src="gifs/smooth_life_opti.gif" style="width: 280px; height: 280px;" alt="Smooth Life optimized">
   </figure>
   <figure style="display: inline-block;">
-    <img src="gifs/gaussian_smooth_life_opti.gif" style="width: 280px; height: 280px;">
-    <figcaption><i>Optimized Gaussian Smooth Life</i></figcaption>
+    <img src="gifs/gaussian_smooth_life_opti.gif" style="width: 280px; height: 280px;" alt="Optimized Gaussian Smooth Life">
   </figure>
 </div>
 
@@ -112,11 +99,9 @@ With these shaders, you can play with the `gen_nb_frames` parameter to slow down
 
 <div style="text-align: center; margin: 20px 0;">
   <figure style="display: inline-block; margin-right: 10px;">
-    <img src="gifs/orbium.gif" style="width: 280px; height: 280px;">
-    <figcaption><i>Lenia Orbium</i></figcaption>
+    <img src="gifs/orbium.gif" style="width: 280px; height: 280px;" alt="Lenia Orbium">
   </figure>
   <figure style="display: inline-block;">
-    <img src="gifs/quadrium.gif" style="width: 280px; height: 280px;">
-    <figcaption><i>Lenia Quadrium</i></figcaption>
+    <img src="gifs/quadrium.gif" style="width: 280px; height: 280px;" alt="Lenia Quadrium">
   </figure>
 </div>
