@@ -24,3 +24,16 @@ With these shaders, you can play with the `gen_nb_frames` parameter to slow down
 - Belooussov-Jabotinski reaction [online shader](https://www.shadertoy.com/view/MflyDn) ([wiki](https://en.wikipedia.org/wiki/Belousov%E2%80%93Zhabotinsky_reaction))
 - Game of life [online shader](https://www.shadertoy.com/view/lXyXzG) ([wiki](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life))
 - Viral Replication [online shader](https://www.shadertoy.com/view/XcfyW8) ([doc](https://www.hermetic.ch/pca/vr.htm))
+
+## Smooth Life
+- Smooth Life discrete time-stepping [online shader](https://www.shadertoy.com/view/XcscW7)
+- Smooth Life continuous time-stepping [online shader](https://www.shadertoy.com/view/4clyD7)
+- Smooth Life color 1 [online shader](https://www.shadertoy.com/view/4flyD7)
+- Smooth Life color 2 [online shader](https://www.shadertoy.com/view/XcsyD7)
+- Smooth Life optimized [online shader](https://www.shadertoy.com/view/XclcD7)
+- Gaussian Smooth Life [online shader](https://www.shadertoy.com/view/XflcD7)
+- Optimized Gaussian Smooth Life [online shader](https://www.shadertoy.com/view/4fscD7)
+
+## Lenia
+- Lenia Orbium [online shader](https://www.shadertoy.com/view/4flcD7)
+- Lenia Quadrium [online shader](https://www.shadertoy.com/view/XcscD7)
