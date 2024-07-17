@@ -1,2 +1,2 @@
-Oscard Morand <oscard.morand@epita.fr>
+Oscar Morand <oscar.morand@epita.fr>
 Ahmed Hassayoune  <ahmed.hassayoune@epita.fr>

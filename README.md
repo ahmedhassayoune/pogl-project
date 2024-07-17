@@ -13,27 +13,110 @@ These shaders are also available online on [Shadertoy](https://www.shadertoy.com
 The shaders with multiple files `*_1, *_2, *_3` represent the same shader and need to be launched from the first shader `*_1`.
 
 # Shaders list
+**🚨 Warning: Some shaders may be harmful to people with photosensitive epilepsy!**
+
 ## 1D Shaders
 With these shaders, you can play with the `gen_nb_frames` parameter to slow down the time, the `isRandom` boolean parameter to switch between single-cell initialisation or random initialisation. For the random one, you can change the `density` parameter to play with the number of cells.
 - Rule 90 [online shader](https://www.shadertoy.com/view/4cXcz8) ([wiki](https://en.wikipedia.org/wiki/Rule_90))
 - Rule 110 [online shader](https://www.shadertoy.com/view/XcXcz8) ([wiki](https://en.wikipedia.org/wiki/Rule_110))
 - Rule 184 [online shader](https://www.shadertoy.com/view/4cfcz8) ([wiki](https://en.wikipedia.org/wiki/Rule_184))
 
+<div style="text-align: center; margin-top: 20px">
+  <figure style="display: inline-block; margin-right: 10px;">
+    <img src="gifs/rule_90.gif" style="width: 280px; height: 280px;">
+    <figcaption><i>Rule 90</i> - A 1D cellular automaton</figcaption>
+  </figure>
+  <figure style="display: inline-block; margin-right: 10px;">
+    <img src="gifs/rule_110.gif" style="width: 280px; height: 280px;">
+    <figcaption><i>Rule 110</i> - A 1D cellular automaton</figcaption>
+  </figure>
+  <figure style="display: inline-block;">
+    <img src="gifs/rule_184.gif" style="width: 280px; height: 280px;">
+    <figcaption><i>Rule 184</i> - A 1D cellular automaton</figcaption>
+  </figure>
+</div>
+
 ## 2D Basic Shaders
+
 With these shaders, you can play with the `gen_nb_frames` parameter to slow down the time and `scale` parameter to zoom in. You can also interact with them by clicking with your mouse on the rendering screen. Each one of them has their own parameters you can play with to change the simulation sequence.
 - Belooussov-Jabotinski reaction [online shader](https://www.shadertoy.com/view/MflyDn) ([wiki](https://en.wikipedia.org/wiki/Belousov%E2%80%93Zhabotinsky_reaction))
-- Game of life [online shader](https://www.shadertoy.com/view/lXyXzG) ([wiki](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life))
 - Viral Replication [online shader](https://www.shadertoy.com/view/XcfyW8) ([doc](https://www.hermetic.ch/pca/vr.htm))
+- Game of life [online shader](https://www.shadertoy.com/view/lXyXzG) ([wiki](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life))
+
+<div style="text-align: center; margin-top: 20px">
+  <figure style="display: inline-block; margin-right: 10px;">
+    <img src="gifs/belousov_zhabotinsky.gif" style="width: 280px; height: 280px;">
+    <figcaption><i>Belooussov-Jabotinski reaction</i></figcaption>
+  </figure>
+  <figure style="display: inline-block; margin-right: 10px;">
+    <img src="gifs/viral_replication.gif" style="width: 280px; height: 280px;">
+    <figcaption><i>Viral Replication</i></figcaption>
+  </figure>
+  <figure style="display: inline-block;">
+    <img src="gifs/gol.gif" style="width: 280px; height: 280px;">
+    <figcaption><i>Game of life</i></figcaption>
+  </figure>
+</div>
 
 ## Smooth Life
 - Smooth Life discrete time-stepping [online shader](https://www.shadertoy.com/view/XcscW7)
 - Smooth Life continuous time-stepping [online shader](https://www.shadertoy.com/view/4clyD7)
+- Gaussian Smooth Life [online shader](https://www.shadertoy.com/view/XflcD7)
+
+<div style="text-align: center; margin-top: 20px">
+  <figure style="display: inline-block; margin-right: 10px;">
+    <img src="gifs/smooth_life_discrete.gif" style="width: 280px; height: 280px;">
+    <figcaption><i>Smooth Life discrete time-stepping</i></figcaption>
+  </figure>
+  <figure style="display: inline-block; margin-right: 10px;">
+    <img src="gifs/smooth_life.gif" style="width: 280px; height: 280px;">
+    <figcaption><i>Smooth Life continuous time-stepping</i></figcaption>
+  </figure>
+  <figure style="display: inline-block;">
+    <img src="gifs/gaussian_smooth_life.gif" style="width: 280px; height: 280px;">
+    <figcaption><i>Gaussian Smooth Life</i></figcaption>
+  </figure>
+</div>
+
 - Smooth Life color 1 [online shader](https://www.shadertoy.com/view/4flyD7)
 - Smooth Life color 2 [online shader](https://www.shadertoy.com/view/XcsyD7)
+
+<div style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin-right: 10px;">
+    <img src="gifs/smooth_life_color1.gif" style="width: 280px; height: 280px;">
+    <figcaption><i>Smooth Life color 1</i></figcaption>
+  </figure>
+  <figure style="display: inline-block;">
+    <img src="gifs/smooth_life_color2.gif" style="width: 280px; height: 280px;">
+    <figcaption><i>Smooth Life color 2</i></figcaption>
+  </figure>
+</div>
+
 - Smooth Life optimized [online shader](https://www.shadertoy.com/view/XclcD7)
-- Gaussian Smooth Life [online shader](https://www.shadertoy.com/view/XflcD7)
 - Optimized Gaussian Smooth Life [online shader](https://www.shadertoy.com/view/4fscD7)
+
+<div style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin-right: 10px;">
+    <img src="gifs/smooth_life_opti.gif" style="width: 280px; height: 280px;">
+    <figcaption><i>Smooth Life optimized</i></figcaption>
+  </figure>
+  <figure style="display: inline-block;">
+    <img src="gifs/gaussian_smooth_life_opti.gif" style="width: 280px; height: 280px;">
+    <figcaption><i>Optimized Gaussian Smooth Life</i></figcaption>
+  </figure>
+</div>
 
 ## Lenia
 - Lenia Orbium [online shader](https://www.shadertoy.com/view/4flcD7)
 - Lenia Quadrium [online shader](https://www.shadertoy.com/view/XcscD7)
+
+<div style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin-right: 10px;">
+    <img src="gifs/orbium.gif" style="width: 280px; height: 280px;">
+    <figcaption><i>Lenia Orbium</i></figcaption>
+  </figure>
+  <figure style="display: inline-block;">
+    <img src="gifs/quadrium.gif" style="width: 280px; height: 280px;">
+    <figcaption><i>Lenia Quadrium</i></figcaption>
+  </figure>
+</div>
